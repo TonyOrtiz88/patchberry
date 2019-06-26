@@ -1,0 +1,39 @@
+/*editor notes
+
+
+
+
+
+
+*/
+
+/* utility */
+.color-main {
+  color: rgb(122, 52, 122);
+}
+.color-main-bg {
+  background-color: rgb(122, 52, 122);
+}
+
+.color-secondary {
+  color: rgb(216, 144, 216);
+}
+.color-secondary-bg {
+  background-color: rgb(216, 144, 216);
+}
+
+.color-third {
+  color: rgb(57, 167, 116);
+}
+.color-third-bg {
+  background-color: rgb(57, 167, 116);
+}
+
+a {
+  color: rgb(216, 144, 216);
+}
+
+a:hover {
+  text-decoration: none;
+  color: black;
+}

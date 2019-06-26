@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 export default class About extends Component {
   render() {
     return (
-      <div>
-        <h1>Hello from About page</h1>
-        <Link className="btn" to="/">
-          Home Page
+      <div className="">
+        <Link className="color-main float-left " to="/">
+          <i class="fas fa-chevron-circle-left fa-2x" />
         </Link>
+        <h1 className="container">Patch Berry's Mission</h1>
       </div>
     );
   }

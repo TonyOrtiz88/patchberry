@@ -15,7 +15,7 @@ export default class Navbar extends Component {
               class="d-inline-block align-top"
               alt=""
             />
-            <span className="">Patch Berry</span>
+            <span className="color-secondary">Patch Berry</span>
           </Link>
           <button
             className="navbar-toggler"
@@ -103,7 +103,7 @@ export default class Navbar extends Component {
                 aria-label="Search"
               />
               <button
-                className="btn btn-outline-success my-2 my-sm-0"
+                className="btn btn-outline-success color-main-bg my-2 my-sm-0"
                 type="submit"
               >
                 Search

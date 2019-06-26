@@ -7,24 +7,24 @@ export default class Footer extends Component {
     return (
       <div className="fixed-bottom">
         <ul class="nav justify-content-center">
-          <li class="nav-item">
-            <Link class="nav-link active" to="#">
+          <li className="nav-item">
+            <Link className="nav-link active" to="#">
               Active
             </Link>
           </li>
-          <li class="nav-item">
-            <Link class="nav-link" to="#">
+          <li className="nav-item">
+            <Link className="nav-link" to="#">
               Contact Us
             </Link>
           </li>
-          <li class="nav-item">
-            <Link class="nav-link" to="#">
+          <li className="nav-item">
+            <Link className="nav-link" to="#">
               Link
             </Link>
           </li>
-          <li class="nav-item">
+          <li className="nav-item">
             <Link
-              class="nav-link disabled"
+              className="nav-link disabled"
               to="#"
               tabindex="-1"
               aria-disabled="true"
@@ -33,8 +33,8 @@ export default class Footer extends Component {
             </Link>
           </li>
         </ul>
-        <nav class="navbar navbar-light bg-light">
-          <Link class="navbar-brand" to="/">
+        <nav className="navbar navbar-light bg-light">
+          <Link className="navbar-brand" to="/">
             <img
               src={berry}
               width="30"
@@ -42,7 +42,7 @@ export default class Footer extends Component {
               class="d-inline-block align-top"
               alt=""
             />
-            Patch Berry
+            <span className="color-secondary">Patch Berry</span>
           </Link>
         </nav>
       </div>
