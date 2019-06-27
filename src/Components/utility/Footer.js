@@ -6,20 +6,20 @@ export default class Footer extends Component {
   render() {
     return (
       <div className="fixed-bottom">
-        <ul class="nav justify-content-center">
+        <ul className="nav justify-content-center">
           <li className="nav-item">
             <Link className="nav-link active" to="#">
               Active
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="#">
+            <Link className="nav-link" to="/contactus">
               Contact Us
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="#">
-              Link
+            <Link className="nav-link" to="/faq">
+              FAQ's
             </Link>
           </li>
           <li className="nav-item">
@@ -33,6 +33,7 @@ export default class Footer extends Component {
             </Link>
           </li>
         </ul>
+
         <nav className="navbar navbar-light bg-light">
           <Link className="navbar-brand" to="/">
             <img

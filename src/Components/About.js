@@ -6,7 +6,7 @@ export default class About extends Component {
     return (
       <div className="">
         <Link className="color-main float-left " to="/">
-          <i class="fas fa-chevron-circle-left fa-2x" />
+          <i className="fas fa-chevron-circle-left fa-2x" />
         </Link>
         <h1 className="container">Patch Berry's Mission</h1>
       </div>

@@ -4,10 +4,13 @@
 
 
 
-
 */
 
 /* utility */
+body {
+  margin-bottom: 10rem;
+}
+
 .color-main {
   color: rgb(122, 52, 122);
 }
