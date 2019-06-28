@@ -5,6 +5,7 @@ import slider2 from "../img/slide2.JPEG";
 import slider3 from "../img/slide3.JPEG";
 import slider4 from "../img/slide5.JPEG";
 import slider5 from "../img/slide6.JPEG";
+import berry from "../img/patchBerryLogo.jpg";
 
 export default class Home extends Component {
   render() {
@@ -34,7 +35,30 @@ export default class Home extends Component {
               </div>
             </div>
           </div>
-          <Link to="/about">Go To Patch Berry's Mission</Link>
+          <br />
+          <br />
+        </div>
+        <div className="row">
+          <div className="col-4">
+            <img src={berry} className="img-fluid" alt="Responsive logo" />
+          </div>
+          <div className="col-6">
+            <h1 className="pt-5">Welcome to Patch Berry</h1>
+            <div className="card bg-dark text-color">
+              <img src={berry} className="card-img" alt="..." />
+              <div className="card-img-overlay">
+                <h5 className="card-title">Card title</h5>
+                <p className="card-text">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+                <p className="card-text">Last updated 3 mins ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-2" />
         </div>
       </div>
     );

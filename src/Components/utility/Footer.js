@@ -8,8 +8,8 @@ export default class Footer extends Component {
       <div className="fixed-bottom">
         <ul className="nav justify-content-center">
           <li className="nav-item">
-            <Link className="nav-link active" to="#">
-              Active
+            <Link className="nav-link active" to="/about">
+              About Us
             </Link>
           </li>
           <li className="nav-item">
