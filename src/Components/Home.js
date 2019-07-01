@@ -11,6 +11,9 @@ export default class Home extends Component {
   render() {
     return (
       <div>
+        <div class="content content--fixed">
+          <div class="content__inner" />
+        </div>
         <div className="container">
           <div
             id="carouselExampleSlidesOnly"
@@ -39,26 +42,12 @@ export default class Home extends Component {
           <br />
         </div>
         <div className="row">
+          <div className="col-4" />
           <div className="col-4">
             <img src={berry} className="img-fluid" alt="Responsive logo" />
+            <h1>Welcome to Patch Berry</h1>
           </div>
-          <div className="col-6">
-            <h1 className="pt-5">Welcome to Patch Berry</h1>
-            <div className="card bg-dark text-color">
-              <img src={berry} className="card-img" alt="..." />
-              <div className="card-img-overlay">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-                <p className="card-text">Last updated 3 mins ago</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-2" />
+          <div className="col-4" />
         </div>
       </div>
     );
