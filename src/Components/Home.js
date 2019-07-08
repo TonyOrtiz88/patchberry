@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import slider1 from "../img/slide4.JPEG";
 import slider2 from "../img/slide2.JPEG";
 import slider3 from "../img/slide3.JPEG";

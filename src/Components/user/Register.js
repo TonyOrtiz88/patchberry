@@ -1,8 +1,81 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+// import axios from "axios";
 
 export default class Register extends Component {
+  // state = {
+  //   username: "",
+  //   password: "",
+  //   password2: "",
+  //   showPasswordAlert: false,
+  //   showUsernameAlert: false,
+  //   showUsernameLengthAlert: false,
+  //   showPasswordLengthAlert: false
+  // };
+
+  // onChange = e => {
+  //   this.setState({
+  //     [e.target.name]: e.target.value,
+  //     showPasswordAlert: false,
+  //     showUsernameAlert: false,
+  //     showUsernameLengthAlert: false,
+  //     showPasswordLengthAlert: false
+  //   });
+  // };
+
+  // onSubmit = e => {
+  //   e.preventDefault();
+  //   const { username, password, password2 } = this.state;
+  //   this.register(username, password, password2);
+  // };
+  // async register(username, password, password2) {
+  //   // check username length
+  //   if (username.length < 5) {
+  //     this.setState({
+  //       showUsernameLengthAlert: true
+  //     });
+  //     return;
+  //   }
+
+  //   // check password length
+  //   if (password.length < 5) {
+  //     this.setState({
+  //       showPasswordLengthAlert: true
+  //     });
+  //     return;
+  //   }
+
+  //   // Does password match
+  //   if (password !== password2) {
+  //     this.setState({
+  //       showPasswordAlert: true
+  //     });
+  //     return;
+  //   }
+
+  //   //check if username is available
+  //   // const res = await axios.get(`/api/user?username=${username}`);
+  //   // console.log(res.data);
+
+  //   if (res.data) {
+  //     this.setState({
+  //       showUsernameAlert: true
+  //     });
+  //     return;
+  //   } else {
+  //     const newUser = {
+  //       username,
+  //       password,
+  //       email: "",
+  //       firstName: "",
+  //       lastName: ""
+  //     };
+  //     // const res2 = await axios.post("/api/register", newUser);
+  //     // this.props.history.push(`/user/${res2.data._id}`);
+  //   }
+  // }
   render() {
+    const { username, password, password2 } = this.state;
     return (
       <div>
         <Link className="color-main float-left " to="/login">
@@ -11,120 +84,84 @@ export default class Register extends Component {
         <br />
         <br />
         <div className="container">
-          <form className="needs-validation" novalidate>
-            <div className="form-row">
-              <div className="col-md-4 mb-3 color-secondary">
-                <label for="validationCustom01">First name</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="validationCustom01"
-                  placeholder="First name"
-                  value=""
-                  required
-                />
-                <div className="valid-feedback">Looks good!</div>
-              </div>
-              <div className="col-md-4 mb-3 color-secondary">
-                <label for="validationCustom02">Last name</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="validationCustom02"
-                  placeholder="Last name"
-                  value=""
-                  required
-                />
-                <div className="valid-feedback">Looks good!</div>
-              </div>
-              <div className="col-md-4 mb-3 color-secondary">
-                <label for="validationCustomUsername">Email</label>
-                <div className="input-group">
-                  <div className="input-group-prepend">
-                    <span className="input-group-text" id="inputGroupPrepend">
-                      @
-                    </span>
-                  </div>
-                  <input
-                    type="email"
-                    className="form-control"
-                    id="validationCustomUsername"
-                    placeholder="valid E-mail"
-                    aria-describedby="inputGroupPrepend"
-                    required
-                  />
-                  <div className="invalid-feedback">
-                    Please choose a username.
-                  </div>
-                </div>
-              </div>
+          <h1 className="text-info">Register</h1>
+
+          {this.state.showPasswordAlert && (
+            <div className="alert alert-danger">
+              The password you enterd do not match, please try again.
             </div>
-            <div className="form-row">
-              <div className="col-md-6 mb-3 color-secondary">
-                <label for="validationCustom03">City</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="validationCustom03"
-                  placeholder="City"
-                  required
-                />
-                <div className="invalid-feedback">
-                  Please provide a valid city.
-                </div>
-              </div>
-              <div className="col-md-3 mb-3 color-secondary">
-                <label for="validationCustom04">State</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="validationCustom04"
-                  placeholder="State"
-                  required
-                />
-                <div className="invalid-feedback">
-                  Please provide a valid state.
-                </div>
-              </div>
-              <div className="col-md-3 mb-3 color-secondary">
-                <label for="validationCustom05">Username</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="validationCustom05"
-                  placeholder="Username"
-                  required
-                />
-                <div className="invalid-feedback">
-                  Please provide a valid Username.
-                </div>
-              </div>
+          )}
+
+          {this.state.showUsernameAlert && (
+            <div className="alert alert-danger">
+              This username is already in our database, please try another one.
+            </div>
+          )}
+
+          {this.state.showUsernameLengthAlert && (
+            <div className="alert alert-danger">
+              Username is too short, please make username at least 6 characters
+            </div>
+          )}
+
+          {this.state.showPasswordLengthAlert && (
+            <div className="alert alert-danger">
+              Password is too short, please make password at least 6 characters
+            </div>
+          )}
+
+          <form onSubmit={this.onSubmit}>
+            <div className="form-group">
+              <label className="text-primary" htmlFor="username">
+                Username
+              </label>
+              <input
+                placeholder="Create a username here..."
+                className="form-control"
+                type="text"
+                id="usename"
+                name="username"
+                value={username}
+                onChange={this.onChange}
+              />
             </div>
             <div className="form-group">
-              <div className="form-check">
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  value=""
-                  id="invalidCheck"
-                  required
-                />
-                <label className="form-check-label" for="invalidCheck">
-                  Agree to terms and conditions
-                </label>
-                <div className="invalid-feedback">
-                  You must agree before submitting.
-                </div>
-              </div>
+              <label className="text-primary" htmlFor="password">
+                Password
+              </label>
+              <input
+                placeholder="Creat a password here..."
+                type="password"
+                className="form-control"
+                id="password"
+                name="password"
+                value={password}
+                onChange={this.onChange}
+              />
             </div>
-            <button
-              className="btn-block btn color-main-bg btn-success"
-              type="submit"
-            >
-              Submit form
+            <div className="form-group">
+              <label className="text-primary" for="password2">
+                Verify Password
+              </label>
+              <input
+                placeholder="Re-enter your password here..."
+                type="password"
+                className="form-control"
+                id="password2"
+                name="password2"
+                value={password2}
+                onChange={this.onChange}
+              />
+            </div>
+            <button className="btn-block btn color-main-bg btn-success">
+              Register
             </button>
+            <Link className="btn btn-danger btn-block" to="/login">
+              Cancel
+            </Link>
           </form>
         </div>
+        <div />
       </div>
     );
   }

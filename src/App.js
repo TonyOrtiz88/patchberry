@@ -1,3 +1,4 @@
+//import axios from "axios";
 import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -11,10 +12,16 @@ import ContactUs from "./Components/ContactUs";
 import Login from "./Components/user/Login";
 import Register from "./Components/user/Register";
 import AdminManage from "./Components/user/AdminManage";
-import Profile from "./Components/profile/profile";
+import Profile from "./Components/user/profile";
 import ProfileEdit from "./Components/profile/ProfileEdit";
 
 function App() {
+  // // Check if user is logged in
+  // loggedIn = async () => {
+  //   const res = await axios.get("/api/loggedIn");
+  //   return res.data;
+  // };
+
   return (
     <Router>
       <Navbar />
