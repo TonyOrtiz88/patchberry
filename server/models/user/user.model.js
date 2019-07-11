@@ -7,14 +7,24 @@ UserModel.createUser = user => {
   return UserModel.create(user);
 };
 
-// Find all user
-UserModel.findAllUsers = () => {
-  return UserModel.find();
+// Find user by credentials
+UserModel.findUserByCredentials = (username, password) => {
+  return UserModel.findOne({ username: username, password: password });
+};
+
+// Find user by username
+UserModel.findUserByUsername = username => {
+  return UserModel.findOne({ username: username });
 };
 
 // Find user by id
 UserModel.findUserById = uid => {
   return UserModel.findById(uid);
+};
+
+// Update User
+UserModel.updateUser = user => {
+  return UserModel.updateOne({ _id: user._id }, user);
 };
 
 module.exports = UserModel;
