@@ -10,6 +10,7 @@ export default class Register extends Component {
     email: "",
     firstName: "",
     lastName: "",
+    genre: "",
     showPasswordAlert: false,
     showUsernameAlert: false,
     showUsernameLengthAlert: false,
@@ -35,11 +36,28 @@ export default class Register extends Component {
       password2,
       email,
       firstName,
-      lastName
+      lastName,
+      genre
     } = this.state;
-    this.register(username, password, password2, email, firstName, lastName);
+    this.register(
+      username,
+      password,
+      password2,
+      email,
+      firstName,
+      lastName,
+      genre
+    );
   };
-  async register(username, password, password2, email, firstName, lastName) {
+  async register(
+    username,
+    password,
+    password2,
+    email,
+    firstName,
+    lastName,
+    genre
+  ) {
     // check username length
     if (username.length < 5) {
       this.setState({
@@ -67,7 +85,6 @@ export default class Register extends Component {
     //check if username is available
     const res = await axios.get(`/api/user?username=${username}`);
     console.log(res.data);
-
     if (res.data) {
       this.setState({
         showUsernameAlert: true
@@ -77,9 +94,10 @@ export default class Register extends Component {
       const newUser = {
         username,
         password,
-        email: "",
-        firstName: "",
-        lastName: ""
+        email,
+        firstName,
+        lastName,
+        genre
       };
       const res2 = await axios.post("/api/register", newUser);
       this.props.history.push(`/user/${res2.data._id}`);
@@ -93,7 +111,8 @@ export default class Register extends Component {
       password2,
       email,
       firstName,
-      lastName
+      lastName,
+      genre
     } = this.state;
     return (
       <div>
@@ -197,7 +216,7 @@ export default class Register extends Component {
               </label>
               <input
                 placeholder="Creat a password here..."
-                type="text"
+                type="password"
                 className="form-control"
                 id="password"
                 name="password"
@@ -206,12 +225,12 @@ export default class Register extends Component {
               />
             </div>
             <div className="form-group">
-              <label className="color-secondary" htmlFor="password2">
+              <label className="" htmlFor="password2">
                 Verify Password
               </label>
               <input
                 placeholder="Re-enter your password here..."
-                type="text"
+                type="password"
                 className="form-control"
                 id="password2"
                 name="password2"
@@ -219,7 +238,30 @@ export default class Register extends Component {
                 onChange={this.onChange}
               />
             </div>
-            <button className="btn-block btn btn-outline-success color-main-bg">
+
+            <div className="input-group mb-3">
+              <select
+                className="custom-select"
+                id="inputGroupSelect02"
+                value={genre}
+                onChange={this.onChange}
+              >
+                <option selected>Choose Genre...</option>
+                <option value="1">Hip-Hop/Rap</option>
+                <option value="2">Instrumentals/Beats</option>
+                <option value="3">R&B/Soul</option>
+              </select>
+              <div className="input-group-append">
+                <label
+                  className="input-group-text color-secondary"
+                  htmlFor="genre"
+                >
+                  Select
+                </label>
+              </div>
+            </div>
+
+            <button className="mt-4 btn-block btn btn-outline-success color-main-bg">
               Register
             </button>
             <Link

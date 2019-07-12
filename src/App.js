@@ -35,7 +35,11 @@ class App extends Component {
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/admin" component={AdminManage} />
-          <Route exact path="/profile" component={Profile} />
+          <Route
+            exact
+            path="/user/:uid"
+            render={props => <Profile {...props} loggedIn={this.loggedIn} />}
+          />
           <Route exact path="/editprofile" component={ProfileEdit} />
         </Switch>
         <Footer />

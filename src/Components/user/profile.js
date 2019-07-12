@@ -98,13 +98,16 @@ export default class profile extends Component {
         <Link className="color-main float-left " to="/login">
           <i class="fas fa-chevron-circle-left fa-2x" />
         </Link>
-        <h1>welcome to profile page</h1>
+        <br />
+        <h1 className="float-right">welcome back!!</h1>
+        <br />
 
         <div className="container">
           {this.state.showUpdateAlert && (
             <div className="alert alert-success">Updated Successfully </div>
           )}
-
+          <br />
+          <br />
           <form id="profileForm" onSubmit={this.onSubmit}>
             <div className="form-group">
               <label className="text-primary" htmlFor="username">
@@ -114,7 +117,7 @@ export default class profile extends Component {
                 placeholder="Enter your username here..."
                 className="form-control"
                 type="text"
-                id="username"
+                id="usename"
                 name="username"
                 value={username}
                 onChange={this.onChange}

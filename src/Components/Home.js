@@ -44,8 +44,12 @@ export default class Home extends Component {
         <div className="row">
           <div className="col-4" />
           <div className="col-4">
-            <img src={berry} className="img-fluid" alt="Responsive logo" />
-            <h1>Welcome to Patch Berry</h1>
+            <img
+              src={berry}
+              className="img-fluid rounded mx-auto d-block"
+              alt="Responsive logo"
+            />
+            <h1 className="text-center">Welcome to Patch Berry</h1>
           </div>
           <div className="col-4" />
         </div>
