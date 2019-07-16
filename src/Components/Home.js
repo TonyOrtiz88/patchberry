@@ -6,13 +6,14 @@ import slider3 from "../img/slide3.JPEG";
 import slider4 from "../img/slide5.JPEG";
 import slider5 from "../img/slide6.JPEG";
 import berry from "../img/patchBerryLogo.jpg";
+import gwitty from "../img/audio/gwitty.mp3";
 
 export default class Home extends Component {
   render() {
     return (
       <div>
-        <div class="content content--fixed">
-          <div class="content__inner" />
+        <div className="content content--fixed">
+          <div className="content__inner" />
         </div>
         <div className="container">
           <div
@@ -42,7 +43,12 @@ export default class Home extends Component {
           <br />
         </div>
         <div className="row">
-          <div className="col-4" />
+          <div className="col-4">
+            <audio controls className="color-secondary">
+              <source src={gwitty} type="audio/mpeg" />
+              {/*<source src="horse.mp3" type="audio/mpeg" />*/}
+            </audio>
+          </div>
           <div className="col-4">
             <img
               src={berry}

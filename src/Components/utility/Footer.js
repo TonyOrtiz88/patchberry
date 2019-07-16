@@ -26,7 +26,7 @@ export default class Footer extends Component {
             <Link
               className="nav-link disabled"
               to="#"
-              tabindex="-1"
+              tabIndex="-1"
               aria-disabled="true"
             >
               Disabled
@@ -40,7 +40,7 @@ export default class Footer extends Component {
               src={berry}
               width="30"
               height="30"
-              class="d-inline-block align-top"
+              className="d-inline-block align-top"
               alt=""
             />
             <span className="color-secondary">Patch Berry</span>

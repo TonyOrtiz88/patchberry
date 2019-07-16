@@ -60,7 +60,7 @@ module.exports = function(app) {
   // Logout
   app.post("/api/logout", (req, res) => {
     req.logOut();
-    res.send(200);
+    res.sendStatus(200);
   });
 
   // Register

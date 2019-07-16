@@ -14,6 +14,7 @@ import Register from "./Components/user/Register";
 import AdminManage from "./Components/user/AdminManage";
 import Profile from "./Components/user/Profile";
 import ProfileEdit from "./Components/profile/ProfileEdit";
+// import ProfileView from "./Components/user/ProfileView";
 
 class App extends Component {
   // Check if user is logged in
@@ -40,6 +41,13 @@ class App extends Component {
             path="/user/:uid"
             render={props => <Profile {...props} loggedIn={this.loggedIn} />}
           />
+          {/* <Route
+            exact
+            path="/user/:uid"
+            render={props => (
+              <ProfileView {...props} loggedIn={this.loggedIn} />
+            )}
+          /> */}
           <Route exact path="/editprofile" component={ProfileEdit} />
         </Switch>
         <Footer />

@@ -12,13 +12,13 @@ export default class Navbar extends Component {
               src={berry}
               width="30"
               height="30"
-              class="d-inline-block align-top"
+              className="d-inline-block align-top"
               alt=""
             />
             <span className="color-secondary">Patch Berry</span>
           </Link>
           <button
-            className="navbar-toggler"
+            className="navbar-toggler btn-dark"
             type="button"
             data-toggle="collapse"
             data-target="#navbarSupportedContent"

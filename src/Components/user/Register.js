@@ -195,7 +195,7 @@ export default class Register extends Component {
               />
             </div>
 
-            <div className="color-main">
+            <div className="form-group">
               <label className="color-secondary" htmlFor="username">
                 Create Username
               </label>
@@ -225,7 +225,7 @@ export default class Register extends Component {
               />
             </div>
             <div className="form-group">
-              <label className="" htmlFor="password2">
+              <label className="color-secondary" htmlFor="password2">
                 Verify Password
               </label>
               <input
@@ -238,27 +238,26 @@ export default class Register extends Component {
                 onChange={this.onChange}
               />
             </div>
-
+            <label className="color-secondary" htmlFor="genre">
+              Select Genre
+            </label>
             <div className="input-group mb-3">
               <select
                 className="custom-select"
-                id="inputGroupSelect02"
-                value={genre}
+                id="genre"
+                name="genre"
                 onChange={this.onChange}
+                value={genre}
               >
-                <option selected>Choose Genre...</option>
-                <option value="1">Hip-Hop/Rap</option>
-                <option value="2">Instrumentals/Beats</option>
-                <option value="3">R&B/Soul</option>
+                <option disabled selected value>
+                  {" "}
+                  -- select an option --{" "}
+                </option>
+                <option value="Hip-Hop/Rap">Hip-Hop/Rap</option>
+                <option value="Instrumentals/Beats">Instrumentals/Beats</option>
+                <option value="R&B/Soul">R&B/Soul</option>
               </select>
-              <div className="input-group-append">
-                <label
-                  className="input-group-text color-secondary"
-                  htmlFor="genre"
-                >
-                  Select
-                </label>
-              </div>
+              <div className="input-group-append" />
             </div>
 
             <button className="mt-4 btn-block btn btn-outline-success color-main-bg">
