@@ -6,7 +6,7 @@ import slider3 from "../img/slide3.JPEG";
 import slider4 from "../img/slide5.JPEG";
 import slider5 from "../img/slide6.JPEG";
 import berry from "../img/patchBerryLogo.jpg";
-import gwitty from "../img/audio/gwitty.mp3";
+import AudioPlayer from "./utility/AudioPlayer";
 
 export default class Home extends Component {
   render() {
@@ -43,12 +43,7 @@ export default class Home extends Component {
           <br />
         </div>
         <div className="row">
-          <div className="col-4">
-            <audio controls className="color-secondary">
-              <source src={gwitty} type="audio/mpeg" />
-              {/*<source src="horse.mp3" type="audio/mpeg" />*/}
-            </audio>
-          </div>
+          <div className="col-4" />
           <div className="col-4">
             <img
               src={berry}
@@ -57,7 +52,25 @@ export default class Home extends Component {
             />
             <h1 className="text-center">Welcome to Patch Berry</h1>
           </div>
-          <div className="col-4" />
+          <div className="col-4"> </div>
+        </div>
+        <br />
+        <div className="row">
+          <div className="col-6">
+            <AudioPlayer />
+          </div>
+          <div className="col-6 mt-5">
+            <div className="card w-75">
+              <div className="card-body">
+                <h5 className="card-title">What is Patch Berry ?</h5>
+                <p className="card-text">
+                  Patch Berry is a platform where independent and mainstream
+                  artist can come and express themselves through music, vlogs,
+                  and videos
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );

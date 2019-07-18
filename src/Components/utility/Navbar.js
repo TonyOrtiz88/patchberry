@@ -1,8 +1,45 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import berry from "../../img/patchBerryLogo.jpg";
 
-export default class Navbar extends Component {
+import axios from "axios";
+
+class Navbar extends Component {
+  state = {
+    searchInput: "",
+    users: [],
+    usersShowing: []
+  };
+
+  async componentDidMount() {
+    const res = await axios.get("/api/users");
+    this.setState({
+      users: res.data
+    });
+  }
+
+  changeSearch = async e => {
+    await this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
+
+  filterUsers = e => {
+    e.preventDefault();
+    const keepUser = (user, text) => {
+      return (user.firstName + user.lastName + user.genre).includes(text);
+    };
+
+    const filteredUsers = this.state.users.filter(user =>
+      keepUser(user, this.state.searchInput)
+    );
+
+    this.props.history.push({
+      pathname: "/searchResults",
+      state: { users: filteredUsers }
+    });
+  };
+
   render() {
     return (
       <div>
@@ -95,12 +132,17 @@ export default class Navbar extends Component {
                 </Link>
               </li> */}
             </ul>
-            <form className="form-inline my-2 my-lg-0">
+            <form
+              className="form-inline my-2 my-lg-0"
+              onSubmit={this.filterUsers}
+            >
               <input
+                onChange={this.changeSearch}
                 className="form-control mr-sm-2"
                 type="search"
-                placeholder="Search"
+                placeholder="Search user by name or genre..."
                 aria-label="Search"
+                name="searchInput"
               />
               <button
                 className="btn btn-outline-success color-main-bg my-2 my-sm-0"
@@ -115,3 +157,5 @@ export default class Navbar extends Component {
     );
   }
 }
+
+export default withRouter(Navbar);

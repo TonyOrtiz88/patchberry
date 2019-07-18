@@ -22,17 +22,13 @@ export default class Footer extends Component {
               FAQ's
             </Link>
           </li>
-          <li className="nav-item">
-            <Link
-              className="nav-link disabled"
-              to="#"
-              tabIndex="-1"
-              aria-disabled="true"
-            >
-              Disabled
-            </Link>
-          </li>
         </ul>
+        <div>
+          {" "}
+          <p className="text-center">
+            Patch Berry &copy; 2019, All Rights Reserved{" "}
+          </p>
+        </div>
 
         <nav className="navbar navbar-light bg-light">
           <Link className="navbar-brand" to="/">

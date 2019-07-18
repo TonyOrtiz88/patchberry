@@ -14,6 +14,8 @@ import Register from "./Components/user/Register";
 import AdminManage from "./Components/user/AdminManage";
 import Profile from "./Components/user/Profile";
 import ProfileEdit from "./Components/profile/ProfileEdit";
+import AudioPlayer from "./Components/utility/AudioPlayer";
+import SearchResults from "./Components/utility/SearchResults";
 // import ProfileView from "./Components/user/ProfileView";
 
 class App extends Component {
@@ -36,6 +38,8 @@ class App extends Component {
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/admin" component={AdminManage} />
+          <Route exact path="/audioPlayer" component={AudioPlayer} />
+          <Route exact path="/searchResults" component={SearchResults} />
           <Route
             exact
             path="/user/:uid"

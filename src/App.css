@@ -38,5 +38,10 @@ a {
 
 a:hover {
   text-decoration: none;
-  color: black;
+  color: rgb(122, 52, 122);
 }
+#resultsList:hover {
+  background-color: rgb(57, 167, 116);
+}
+
+/* contact form css */
